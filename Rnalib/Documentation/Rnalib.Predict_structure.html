@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module Rnalib.Predict_structure</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="Rnalib.html" class="white">Rnalib</a>.Predict_structure</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:/home/mathieu/ownCloud/Master_MISO/Projet_2023/mon_projet/Rnalib/Predict_structure.py">/home/mathieu/ownCloud/Master_MISO/Projet_2023/mon_projet/Rnalib/Predict_structure.py</a></td></tr></table>
+    <p><span class="code">Created&nbsp;on&nbsp;Tue&nbsp;Mar&nbsp;&nbsp;7&nbsp;17:13:59&nbsp;2023<br>
+&nbsp;<br>
+@author:&nbsp;Mathieu&nbsp;Genete</span></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="numpy.html">numpy</a><br>
+</td><td class="multicolumn"><a href="time.html">time</a><br>
+</td><td class="multicolumn"></td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="builtins.html#object">builtins.object</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="Rnalib.Predict_structure.html#Predict_structure">Predict_structure</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Predict_structure">class <strong>Predict_structure</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#Predict_structure">Predict_structure</a>(rnaSeq,&nbsp;minloop=3,&nbsp;skipPredAll=False,&nbsp;use_recurse=False,&nbsp;bases_scores=None)<br>
+&nbsp;<br>
+Classe&nbsp;pour&nbsp;prédire&nbsp;les&nbsp;structures&nbsp;d'ARN.<br>
+&nbsp;<br>
+Attributs:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;__rna&nbsp;(Rna_seq):&nbsp;Objet&nbsp;représentant&nbsp;la&nbsp;séquence&nbsp;d'ARN.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;__minimal_loop_length&nbsp;(int):&nbsp;Longueur&nbsp;minimale&nbsp;de&nbsp;la&nbsp;boucle.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;__matrix&nbsp;(None):&nbsp;Matrice&nbsp;pour&nbsp;les&nbsp;calculs&nbsp;de&nbsp;structure.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;__structure&nbsp;(None):&nbsp;Structure&nbsp;prédite&nbsp;de&nbsp;l'ARN.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;__all_structures&nbsp;(list):&nbsp;Liste&nbsp;de&nbsp;toutes&nbsp;les&nbsp;structures&nbsp;prédictes.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;__predict_time&nbsp;(int):&nbsp;Temps&nbsp;de&nbsp;prédiction.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;__skipPredAll&nbsp;(bool):&nbsp;Indicateur&nbsp;pour&nbsp;sauter&nbsp;la&nbsp;prédiction&nbsp;de&nbsp;toutes&nbsp;les&nbsp;structures.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;__use_recurse&nbsp;(bool):&nbsp;Indicateur&nbsp;pour&nbsp;utiliser&nbsp;la&nbsp;récursion.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;__bases_scores&nbsp;(Scores):&nbsp;Scores&nbsp;des&nbsp;bases&nbsp;de&nbsp;l'ARN.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="Predict_structure-__init__"><strong>__init__</strong></a>(self, rnaSeq, minloop=3, skipPredAll=False, use_recurse=False, bases_scores=None)</dt><dd><span class="code">Initialise&nbsp;une&nbsp;instance&nbsp;de&nbsp;<a href="#Predict_structure">Predict_structure</a>.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;rnaSeq&nbsp;(Rna_seq):&nbsp;Objet&nbsp;représentant&nbsp;la&nbsp;séquence&nbsp;d'ARN.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;minloop&nbsp;(int,&nbsp;optionnel):&nbsp;Longueur&nbsp;minimale&nbsp;de&nbsp;la&nbsp;boucle.&nbsp;Par&nbsp;défaut&nbsp;à&nbsp;3.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;skipPredAll&nbsp;(bool,&nbsp;optionnel):&nbsp;Indicateur&nbsp;pour&nbsp;sauter&nbsp;la&nbsp;prédiction&nbsp;de&nbsp;toutes&nbsp;les&nbsp;structures.&nbsp;Par&nbsp;défaut&nbsp;à&nbsp;False.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;use_recurse&nbsp;(bool,&nbsp;optionnel):&nbsp;Indicateur&nbsp;pour&nbsp;utiliser&nbsp;la&nbsp;récursion.&nbsp;Par&nbsp;défaut&nbsp;à&nbsp;False.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;bases_scores&nbsp;(Scores,&nbsp;optionnel):&nbsp;Scores&nbsp;des&nbsp;bases&nbsp;de&nbsp;l'ARN.&nbsp;Par&nbsp;défaut&nbsp;à&nbsp;None.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Exception:&nbsp;Si&nbsp;rnaSeq&nbsp;n'est&nbsp;pas&nbsp;un&nbsp;objet&nbsp;Rna_seq&nbsp;ou&nbsp;si&nbsp;bases_scores&nbsp;n'est&nbsp;pas&nbsp;un&nbsp;objet&nbsp;Scores.</span></dd></dl>
+
+<dl><dt><a name="Predict_structure-change_scores"><strong>change_scores</strong></a>(self, scores)</dt><dd><span class="code">Change&nbsp;les&nbsp;scores&nbsp;des&nbsp;bases&nbsp;de&nbsp;l'ARN&nbsp;et&nbsp;refait&nbsp;les&nbsp;prédictions&nbsp;de&nbsp;structures.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;scores&nbsp;(Scores):&nbsp;Nouveaux&nbsp;scores&nbsp;des&nbsp;bases&nbsp;de&nbsp;l'ARN.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Exception:&nbsp;Si&nbsp;l'objet&nbsp;scores&nbsp;n'est&nbsp;pas&nbsp;une&nbsp;instance&nbsp;de&nbsp;Scores.</span></dd></dl>
+
+<dl><dt><a name="Predict_structure-export_matrixt_to_csv"><strong>export_matrixt_to_csv</strong></a>(self, outcsv, sep=',')</dt><dd><span class="code">Exporte&nbsp;la&nbsp;matrice&nbsp;des&nbsp;scores&nbsp;vers&nbsp;un&nbsp;fichier&nbsp;CSV.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;outcsv&nbsp;(str):&nbsp;Nom&nbsp;du&nbsp;fichier&nbsp;CSV&nbsp;de&nbsp;sortie.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;sep&nbsp;(str,&nbsp;optionnel):&nbsp;Séparateur&nbsp;pour&nbsp;le&nbsp;fichier&nbsp;CSV.&nbsp;Par&nbsp;défaut&nbsp;à&nbsp;",".</span></dd></dl>
+
+<dl><dt><a name="Predict_structure-print_all_structures"><strong>print_all_structures</strong></a>(self, filename=None)</dt><dd><span class="code">Affiche&nbsp;ou&nbsp;enregistre&nbsp;toutes&nbsp;les&nbsp;structures&nbsp;prédites.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;filename&nbsp;(str,&nbsp;optionnel):&nbsp;Nom&nbsp;du&nbsp;fichier&nbsp;pour&nbsp;enregistrer&nbsp;les&nbsp;structures.&nbsp;Par&nbsp;défaut&nbsp;à&nbsp;None.</span></dd></dl>
+
+<dl><dt><a name="Predict_structure-print_matrix"><strong>print_matrix</strong></a>(self)</dt><dd><span class="code">Affiche&nbsp;la&nbsp;matrice&nbsp;des&nbsp;scores.<br>
+&nbsp;<br>
+Utilise&nbsp;pandas&nbsp;pour&nbsp;un&nbsp;affichage&nbsp;formaté&nbsp;si&nbsp;disponible,&nbsp;sinon&nbsp;utilise&nbsp;numpy.</span></dd></dl>
+
+<dl><dt><a name="Predict_structure-structures_prediction"><strong>structures_prediction</strong></a>(self, skipPredAll=False, use_recurse=False)</dt><dd><span class="code">Prédit&nbsp;les&nbsp;structures&nbsp;d'ARN&nbsp;en&nbsp;remplissant&nbsp;la&nbsp;matrice&nbsp;des&nbsp;scores&nbsp;et&nbsp;en&nbsp;effectuant&nbsp;le&nbsp;traceback.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;skipPredAll&nbsp;(bool,&nbsp;optionnel):&nbsp;Indicateur&nbsp;pour&nbsp;sauter&nbsp;la&nbsp;prédiction&nbsp;de&nbsp;toutes&nbsp;les&nbsp;structures.&nbsp;Par&nbsp;défaut&nbsp;à&nbsp;False.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;use_recurse&nbsp;(bool,&nbsp;optionnel):&nbsp;Indicateur&nbsp;pour&nbsp;utiliser&nbsp;la&nbsp;récursion.&nbsp;Par&nbsp;défaut&nbsp;à&nbsp;False.</span></dd></dl>
+
+<hr>
+Readonly properties defined here:<br>
+<dl><dt><strong>all_structures</strong></dt>
+<dd><span class="code">Retourne&nbsp;la&nbsp;liste&nbsp;de&nbsp;toutes&nbsp;les&nbsp;structures&nbsp;prédictes.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;list:&nbsp;Liste&nbsp;de&nbsp;toutes&nbsp;les&nbsp;structures&nbsp;prédictes.</span></dd>
+</dl>
+<dl><dt><strong>matrix</strong></dt>
+<dd><span class="code">Retourne&nbsp;la&nbsp;matrice&nbsp;de&nbsp;calcul&nbsp;de&nbsp;structure.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None:&nbsp;Matrice&nbsp;pour&nbsp;les&nbsp;calculs&nbsp;de&nbsp;structure.</span></dd>
+</dl>
+<dl><dt><strong>predict_infos</strong></dt>
+<dd><span class="code">Retourne&nbsp;les&nbsp;informations&nbsp;de&nbsp;prédiction&nbsp;sous&nbsp;forme&nbsp;de&nbsp;chaîne&nbsp;de&nbsp;caractères&nbsp;formatée.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;str:&nbsp;Informations&nbsp;de&nbsp;prédiction&nbsp;formatées.</span></dd>
+</dl>
+<dl><dt><strong>rna</strong></dt>
+<dd><span class="code">Retourne&nbsp;l'objet&nbsp;Rna_seq.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;Rna_seq:&nbsp;Objet&nbsp;représentant&nbsp;la&nbsp;séquence&nbsp;d'ARN.</span></dd>
+</dl>
+<dl><dt><strong>scores</strong></dt>
+<dd><span class="code">Retourne&nbsp;les&nbsp;scores&nbsp;des&nbsp;bases&nbsp;de&nbsp;l'ARN.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Scores:&nbsp;Scores&nbsp;des&nbsp;bases&nbsp;de&nbsp;l'ARN.</span></dd>
+</dl>
+<dl><dt><strong>structure</strong></dt>
+<dd><span class="code">Retourne&nbsp;la&nbsp;structure&nbsp;prédite&nbsp;de&nbsp;l'ARN.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None:&nbsp;Structure&nbsp;prédite&nbsp;de&nbsp;l'ARN.</span></dd>
+</dl>
+<dl><dt><strong>structures_nbr</strong></dt>
+<dd><span class="code">Retourne&nbsp;le&nbsp;nombre&nbsp;de&nbsp;structures&nbsp;optimales.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int:&nbsp;Nombre&nbsp;de&nbsp;structures&nbsp;optimales.</span></dd>
+</dl>
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor data-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Data</strong></td></tr>
+    
+<tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><strong>pandas_mod</strong> = False</td></tr></table>
+</body></html>

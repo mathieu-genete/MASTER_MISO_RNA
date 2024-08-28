@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module Rnalib.Rna_parser</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="Rnalib.html" class="white">Rnalib</a>.Rna_parser</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:/home/mathieu/ownCloud/Master_MISO/Projet_2023/mon_projet/Rnalib/Rna_parser.py">/home/mathieu/ownCloud/Master_MISO/Projet_2023/mon_projet/Rnalib/Rna_parser.py</a></td></tr></table>
+    <p><span class="code">Created&nbsp;on&nbsp;Tue&nbsp;Mar&nbsp;&nbsp;7&nbsp;17:09:47&nbsp;2023<br>
+&nbsp;<br>
+@author:&nbsp;Mathieu&nbsp;Genete</span></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="os.html">os</a><br>
+</td><td class="multicolumn"></td><td class="multicolumn"></td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="builtins.html#object">builtins.object</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="Rnalib.Rna_parser.html#Rna_parser">Rna_parser</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Rna_parser">class <strong>Rna_parser</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor"><span class="code">&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn">Static methods defined here:<br>
+<dl><dt><a name="Rna_parser-fasta_to_db"><strong>fasta_to_db</strong></a>(infasta, outdb, minloop=3, scores=None)</dt><dd><span class="code">Convertit&nbsp;un&nbsp;fichier&nbsp;FASTA&nbsp;au&nbsp;format&nbsp;dot-bracket&nbsp;en&nbsp;prédisant&nbsp;les&nbsp;structures&nbsp;d'ARN.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;infasta&nbsp;(str):&nbsp;Le&nbsp;chemin&nbsp;vers&nbsp;le&nbsp;fichier&nbsp;FASTA&nbsp;d'entrée.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;outdb&nbsp;(str):&nbsp;Le&nbsp;chemin&nbsp;vers&nbsp;le&nbsp;fichier&nbsp;dot-bracket&nbsp;de&nbsp;sortie.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;minloop&nbsp;(int,&nbsp;optionnel):&nbsp;La&nbsp;longueur&nbsp;minimale&nbsp;de&nbsp;la&nbsp;boucle&nbsp;pour&nbsp;la&nbsp;prédiction&nbsp;de&nbsp;structure.&nbsp;Par&nbsp;défaut&nbsp;à&nbsp;3.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;scores&nbsp;(dict,&nbsp;optionnel):&nbsp;Un&nbsp;dictionnaire&nbsp;de&nbsp;scores&nbsp;de&nbsp;bases&nbsp;pour&nbsp;la&nbsp;prédiction&nbsp;de&nbsp;structure.&nbsp;Par&nbsp;défaut&nbsp;à&nbsp;None.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None</span></dd></dl>
+
+<dl><dt><a name="Rna_parser-parse_connect_file"><strong>parse_connect_file</strong></a>(filename, minimal_loop_length=3)</dt><dd><span class="code">Analyse&nbsp;un&nbsp;fichier&nbsp;au&nbsp;format&nbsp;connect&nbsp;et&nbsp;retourne&nbsp;un&nbsp;objet&nbsp;de&nbsp;structure&nbsp;d'ARN.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;filename&nbsp;(str):&nbsp;Le&nbsp;chemin&nbsp;vers&nbsp;le&nbsp;fichier&nbsp;au&nbsp;format&nbsp;connect.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;minimal_loop_length&nbsp;(int,&nbsp;optionnel):&nbsp;La&nbsp;longueur&nbsp;minimale&nbsp;de&nbsp;la&nbsp;boucle&nbsp;pour&nbsp;la&nbsp;validation&nbsp;de&nbsp;structure.&nbsp;Par&nbsp;défaut&nbsp;à&nbsp;3.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Rna_structure:&nbsp;Un&nbsp;objet&nbsp;de&nbsp;structure&nbsp;d'ARN.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Exception:&nbsp;S'il&nbsp;y&nbsp;a&nbsp;des&nbsp;erreurs&nbsp;de&nbsp;format&nbsp;dans&nbsp;le&nbsp;fichier&nbsp;connect.</span></dd></dl>
+
+<dl><dt><a name="Rna_parser-parse_dotbrackets_file"><strong>parse_dotbrackets_file</strong></a>(filename, minimal_loop_length=3)</dt><dd><span class="code">Analyse&nbsp;un&nbsp;fichier&nbsp;de&nbsp;dot-bracket&nbsp;et&nbsp;retourne&nbsp;un&nbsp;dictionnaire&nbsp;de&nbsp;structures&nbsp;d'ARN.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;filename&nbsp;(str):&nbsp;Le&nbsp;chemin&nbsp;vers&nbsp;le&nbsp;fichier&nbsp;de&nbsp;dot-bracket.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;minimal_loop_length&nbsp;(int,&nbsp;optionnel):&nbsp;La&nbsp;longueur&nbsp;minimale&nbsp;de&nbsp;la&nbsp;boucle&nbsp;pour&nbsp;la&nbsp;validation&nbsp;des&nbsp;épingles&nbsp;à&nbsp;cheveux.&nbsp;Par&nbsp;défaut&nbsp;à&nbsp;3.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;dict:&nbsp;Un&nbsp;dictionnaire&nbsp;où&nbsp;les&nbsp;clés&nbsp;sont&nbsp;les&nbsp;IDs&nbsp;de&nbsp;séquence&nbsp;et&nbsp;les&nbsp;valeurs&nbsp;sont&nbsp;des&nbsp;objets&nbsp;de&nbsp;structure&nbsp;d'ARN.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Exception:&nbsp;Si&nbsp;le&nbsp;fichier&nbsp;n'existe&nbsp;pas&nbsp;ou&nbsp;s'il&nbsp;y&nbsp;a&nbsp;des&nbsp;erreurs&nbsp;de&nbsp;format&nbsp;dans&nbsp;les&nbsp;séquences.</span></dd></dl>
+
+<dl><dt><a name="Rna_parser-parse_fasta"><strong>parse_fasta</strong></a>(filename)</dt><dd><span class="code">Analyse&nbsp;un&nbsp;fichier&nbsp;FASTA&nbsp;et&nbsp;retourne&nbsp;un&nbsp;dictionnaire&nbsp;avec&nbsp;les&nbsp;IDs&nbsp;de&nbsp;séquence&nbsp;comme&nbsp;clés&nbsp;et&nbsp;leurs&nbsp;descriptions&nbsp;et&nbsp;séquences&nbsp;comme&nbsp;valeurs.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;filename&nbsp;(str):&nbsp;Le&nbsp;chemin&nbsp;vers&nbsp;le&nbsp;fichier&nbsp;FASTA.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;dict:&nbsp;Un&nbsp;dictionnaire&nbsp;où&nbsp;les&nbsp;clés&nbsp;sont&nbsp;les&nbsp;IDs&nbsp;de&nbsp;séquence&nbsp;et&nbsp;les&nbsp;valeurs&nbsp;sont&nbsp;des&nbsp;dictionnaires&nbsp;avec&nbsp;les&nbsp;clés&nbsp;'description'&nbsp;et&nbsp;'seq'.</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>

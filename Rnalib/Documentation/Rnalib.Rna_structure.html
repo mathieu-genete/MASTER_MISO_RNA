@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module Rnalib.Rna_structure</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="Rnalib.html" class="white">Rnalib</a>.Rna_structure</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:/home/mathieu/ownCloud/Master_MISO/Projet_2023/mon_projet/Rnalib/Rna_structure.py">/home/mathieu/ownCloud/Master_MISO/Projet_2023/mon_projet/Rnalib/Rna_structure.py</a></td></tr></table>
+    <p><span class="code">Created&nbsp;on&nbsp;Tue&nbsp;Mar&nbsp;&nbsp;7&nbsp;17:11:36&nbsp;2023<br>
+&nbsp;<br>
+@author:&nbsp;Mathieu&nbsp;Genete</span></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="re.html">re</a><br>
+</td><td class="multicolumn"></td><td class="multicolumn"></td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="builtins.html#object">builtins.object</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="Rnalib.Rna_structure.html#Rna_structure">Rna_structure</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Rna_structure">class <strong>Rna_structure</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#Rna_structure">Rna_structure</a>(rnaSeq,&nbsp;fold=None,&nbsp;scores=None,&nbsp;dotpar=None)<br>
+&nbsp;<br>
+Classe&nbsp;représentant&nbsp;la&nbsp;structure&nbsp;d'un&nbsp;ARN.<br>
+&nbsp;<br>
+Attributs:<br>
+----------<br>
+__rna&nbsp;:&nbsp;Rna_seq<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Séquence&nbsp;ARN.<br>
+__fold&nbsp;:&nbsp;list<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Liste&nbsp;des&nbsp;paires&nbsp;de&nbsp;bases&nbsp;formant&nbsp;la&nbsp;structure.<br>
+__dotpar&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Représentation&nbsp;en&nbsp;notation&nbsp;dot-parenthèse&nbsp;de&nbsp;la&nbsp;structure.<br>
+__scores&nbsp;:&nbsp;Scores<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Scores&nbsp;associés&nbsp;aux&nbsp;paires&nbsp;de&nbsp;bases.<br>
+__arbre&nbsp;:&nbsp;Tree<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Arbre&nbsp;représentant&nbsp;la&nbsp;structure.<br>
+__score&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Score&nbsp;total&nbsp;de&nbsp;la&nbsp;structure.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="Rna_structure-__init__"><strong>__init__</strong></a>(self, rnaSeq, fold=None, scores=None, dotpar=None)</dt><dd><span class="code">Initialise&nbsp;une&nbsp;nouvelle&nbsp;instance&nbsp;de&nbsp;<a href="#Rna_structure">Rna_structure</a>.<br>
+&nbsp;<br>
+Paramètres:<br>
+-----------<br>
+rnaSeq&nbsp;:&nbsp;Rna_seq<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Objet&nbsp;représentant&nbsp;la&nbsp;séquence&nbsp;ARN.<br>
+fold&nbsp;:&nbsp;list,&nbsp;optionnel<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Liste&nbsp;des&nbsp;paires&nbsp;de&nbsp;bases&nbsp;formant&nbsp;la&nbsp;structure.<br>
+scores&nbsp;:&nbsp;Scores,&nbsp;optionnel<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Scores&nbsp;associés&nbsp;aux&nbsp;paires&nbsp;de&nbsp;bases.<br>
+dotpar&nbsp;:&nbsp;str,&nbsp;optionnel<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Représentation&nbsp;en&nbsp;notation&nbsp;dot-parenthèse&nbsp;de&nbsp;la&nbsp;structure.<br>
+&nbsp;<br>
+Exceptions:<br>
+-----------<br>
+Exception<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Si&nbsp;rnaSeq&nbsp;n'est&nbsp;pas&nbsp;un&nbsp;objet&nbsp;Rna_seq.<br>
+Exception<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Si&nbsp;scores&nbsp;n'est&nbsp;pas&nbsp;un&nbsp;objet&nbsp;Scores.<br>
+Exception<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Si&nbsp;ni&nbsp;fold&nbsp;ni&nbsp;dotpar,&nbsp;ou&nbsp;si&nbsp;les&nbsp;deux&nbsp;sont&nbsp;fournis.</span></dd></dl>
+
+<dl><dt><a name="Rna_structure-__str__"><strong>__str__</strong></a>(self)</dt><dd><span class="code">Retourne&nbsp;la&nbsp;représentation&nbsp;en&nbsp;notation&nbsp;dot-parenthèse&nbsp;de&nbsp;la&nbsp;structure.</span></dd></dl>
+
+<dl><dt><a name="Rna_structure-check_hairpin"><strong>check_hairpin</strong></a>(self, minimal_loop_length)</dt><dd><span class="code">Vérifie&nbsp;que&nbsp;toutes&nbsp;les&nbsp;boucles&nbsp;de&nbsp;la&nbsp;structure&nbsp;respectent&nbsp;une&nbsp;longueur&nbsp;minimale.<br>
+&nbsp;<br>
+Paramètres:<br>
+-----------<br>
+minimal_loop_length&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Longueur&nbsp;minimale&nbsp;des&nbsp;boucles.<br>
+&nbsp;<br>
+Retourne:<br>
+---------<br>
+bool<br>
+&nbsp;&nbsp;&nbsp;&nbsp;True&nbsp;si&nbsp;toutes&nbsp;les&nbsp;boucles&nbsp;respectent&nbsp;la&nbsp;longueur&nbsp;minimale,&nbsp;False&nbsp;sinon.</span></dd></dl>
+
+<dl><dt><a name="Rna_structure-check_structure"><strong>check_structure</strong></a>(self)</dt><dd><span class="code">Vérifie&nbsp;la&nbsp;validité&nbsp;de&nbsp;la&nbsp;structure&nbsp;ARN.<br>
+&nbsp;<br>
+Retourne:<br>
+---------<br>
+bool<br>
+&nbsp;&nbsp;&nbsp;&nbsp;True&nbsp;si&nbsp;la&nbsp;structure&nbsp;est&nbsp;valide,&nbsp;False&nbsp;sinon.</span></dd></dl>
+
+<dl><dt><a name="Rna_structure-compact_struct"><strong>compact_struct</strong></a>(self)</dt><dd><span class="code">Compacte&nbsp;la&nbsp;structure&nbsp;en&nbsp;supprimant&nbsp;les&nbsp;paires&nbsp;de&nbsp;bases&nbsp;adjacentes.<br>
+&nbsp;<br>
+Retourne:<br>
+---------<br>
+str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;La&nbsp;structure&nbsp;compactée&nbsp;en&nbsp;notation&nbsp;dot-parenthèse.</span></dd></dl>
+
+<dl><dt><a name="Rna_structure-dot_par_to_latex"><strong>dot_par_to_latex</strong></a>(self, dotb=None, print_struct=True, numbers_shift=1)</dt><dd><span class="code">Convertit&nbsp;la&nbsp;structure&nbsp;en&nbsp;notation&nbsp;dot-parenthèse&nbsp;en&nbsp;code&nbsp;LaTeX.<br>
+&nbsp;<br>
+Paramètres:<br>
+-----------<br>
+dotb&nbsp;:&nbsp;str,&nbsp;optionnel<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Structure&nbsp;en&nbsp;notation&nbsp;dot-parenthèse.&nbsp;Si&nbsp;None,&nbsp;utilise&nbsp;la&nbsp;structure&nbsp;de&nbsp;l'objet.<br>
+print_struct&nbsp;:&nbsp;bool,&nbsp;optionnel<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Si&nbsp;True,&nbsp;imprime&nbsp;la&nbsp;structure.&nbsp;Sinon,&nbsp;imprime&nbsp;les&nbsp;positions&nbsp;des&nbsp;paires&nbsp;de&nbsp;bases.<br>
+numbers_shift&nbsp;:&nbsp;int,&nbsp;optionnel<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Décalage&nbsp;des&nbsp;numéros&nbsp;de&nbsp;positions.</span></dd></dl>
+
+<dl><dt><a name="Rna_structure-print_struct"><strong>print_struct</strong></a>(self, sepsize=0, print_pos=False)</dt><dd><span class="code">Affiche&nbsp;la&nbsp;structure&nbsp;ARN.<br>
+&nbsp;<br>
+Paramètres:<br>
+-----------<br>
+sepsize&nbsp;:&nbsp;int,&nbsp;optionnel<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Taille&nbsp;de&nbsp;l'espace&nbsp;entre&nbsp;les&nbsp;bases.<br>
+print_pos&nbsp;:&nbsp;bool,&nbsp;optionnel<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Si&nbsp;True,&nbsp;affiche&nbsp;les&nbsp;positions&nbsp;des&nbsp;bases.</span></dd></dl>
+
+<dl><dt><a name="Rna_structure-structure_to_ct"><strong>structure_to_ct</strong></a>(self, filename=None)</dt><dd><span class="code">Convertit&nbsp;la&nbsp;structure&nbsp;au&nbsp;format&nbsp;connect&nbsp;(CT).<br>
+&nbsp;<br>
+Paramètres:<br>
+-----------<br>
+filename&nbsp;:&nbsp;str,&nbsp;optionnel<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Nom&nbsp;du&nbsp;fichier&nbsp;où&nbsp;sauvegarder&nbsp;la&nbsp;table&nbsp;CT.&nbsp;Si&nbsp;None,&nbsp;retourne&nbsp;la&nbsp;table&nbsp;CT&nbsp;sous&nbsp;forme&nbsp;de&nbsp;chaîne&nbsp;de&nbsp;caractères.<br>
+&nbsp;<br>
+Retourne:<br>
+---------<br>
+str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;La&nbsp;table&nbsp;CT&nbsp;sous&nbsp;forme&nbsp;de&nbsp;chaîne&nbsp;de&nbsp;caractères&nbsp;si&nbsp;filename&nbsp;est&nbsp;None.</span></dd></dl>
+
+<hr>
+Readonly properties defined here:<br>
+<dl><dt><strong>arbre</strong></dt>
+<dd><span class="code">Retourne&nbsp;l'arbre&nbsp;représentant&nbsp;la&nbsp;structure.</span></dd>
+</dl>
+<dl><dt><strong>dotpar</strong></dt>
+<dd><span class="code">Retourne&nbsp;la&nbsp;représentation&nbsp;en&nbsp;notation&nbsp;dot-parenthèse&nbsp;de&nbsp;la&nbsp;structure.</span></dd>
+</dl>
+<dl><dt><strong>fold</strong></dt>
+<dd><span class="code">Retourne&nbsp;la&nbsp;liste&nbsp;des&nbsp;paires&nbsp;de&nbsp;bases&nbsp;formant&nbsp;la&nbsp;structure.</span></dd>
+</dl>
+<dl><dt><strong>rna</strong></dt>
+<dd><span class="code">Retourne&nbsp;la&nbsp;séquence&nbsp;ARN.</span></dd>
+</dl>
+<dl><dt><strong>score</strong></dt>
+<dd><span class="code">Retourne&nbsp;le&nbsp;score&nbsp;total&nbsp;de&nbsp;la&nbsp;structure.</span></dd>
+</dl>
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>

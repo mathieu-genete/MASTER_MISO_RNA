@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module Rnalib.Scores</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="Rnalib.html" class="white">Rnalib</a>.Scores</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:/home/mathieu/ownCloud/Master_MISO/Projet_2023/mon_projet/Rnalib/Scores.py">/home/mathieu/ownCloud/Master_MISO/Projet_2023/mon_projet/Rnalib/Scores.py</a></td></tr></table>
+    <p><span class="code">Created&nbsp;on&nbsp;Tue&nbsp;Mar&nbsp;&nbsp;7&nbsp;17:16:16&nbsp;2023<br>
+&nbsp;<br>
+@author:&nbsp;Mathieu&nbsp;Genete</span></p>
+<p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="builtins.html#object">builtins.object</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="Rnalib.Scores.html#Scores">Scores</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Scores">class <strong>Scores</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#Scores">Scores</a>(GC=3,&nbsp;AU=2,&nbsp;GU=1)<br>
+&nbsp;<br>
+Classe&nbsp;pour&nbsp;gérer&nbsp;les&nbsp;scores&nbsp;entre&nbsp;différentes&nbsp;paires.<br>
+&nbsp;<br>
+Attributs:<br>
+----------<br>
+__pairs&nbsp;:&nbsp;dict<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Dictionnaire&nbsp;contenant&nbsp;les&nbsp;scores&nbsp;pour&nbsp;chaque&nbsp;paire.<br>
+__allowed_bp&nbsp;:&nbsp;list<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Liste&nbsp;des&nbsp;paires&nbsp;autorisées&nbsp;sous&nbsp;forme&nbsp;de&nbsp;chaînes&nbsp;de&nbsp;caractères.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="Scores-__init__"><strong>__init__</strong></a>(self, GC=3, AU=2, GU=1)</dt><dd><span class="code">Initialise&nbsp;la&nbsp;classe&nbsp;<a href="#Scores">Scores</a>&nbsp;avec&nbsp;des&nbsp;valeurs&nbsp;par&nbsp;défaut&nbsp;pour&nbsp;GC,&nbsp;AU&nbsp;et&nbsp;GU.<br>
+&nbsp;<br>
+Paramètres:<br>
+-----------<br>
+GC&nbsp;:&nbsp;int,&nbsp;optionnel<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Score&nbsp;pour&nbsp;la&nbsp;paire&nbsp;GC&nbsp;(par&nbsp;défaut&nbsp;3).<br>
+AU&nbsp;:&nbsp;int,&nbsp;optionnel<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Score&nbsp;pour&nbsp;la&nbsp;paire&nbsp;AU&nbsp;(par&nbsp;défaut&nbsp;2).<br>
+GU&nbsp;:&nbsp;int,&nbsp;optionnel<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Score&nbsp;pour&nbsp;la&nbsp;paire&nbsp;GU&nbsp;(par&nbsp;défaut&nbsp;1).<br>
+&nbsp;<br>
+Exceptions:<br>
+-----------<br>
+Exception<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Si&nbsp;les&nbsp;scores&nbsp;ne&nbsp;sont&nbsp;pas&nbsp;des&nbsp;entiers.</span></dd></dl>
+
+<dl><dt><a name="Scores-__str__"><strong>__str__</strong></a>(self)</dt><dd><span class="code">Retourne&nbsp;un&nbsp;dictionnaire&nbsp;contenant&nbsp;les&nbsp;scores&nbsp;pour&nbsp;chaque&nbsp;paire.<br>
+&nbsp;<br>
+Retourne:<br>
+---------<br>
+dict<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Dictionnaire&nbsp;contenant&nbsp;les&nbsp;scores&nbsp;pour&nbsp;chaque&nbsp;paire.</span></dd></dl>
+
+<hr>
+Readonly properties defined here:<br>
+<dl><dt><strong>allowed_bp</strong></dt>
+<dd><span class="code">Retourne&nbsp;la&nbsp;liste&nbsp;des&nbsp;paires&nbsp;autorisées.<br>
+&nbsp;<br>
+Retourne:<br>
+---------<br>
+list<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Liste&nbsp;des&nbsp;paires&nbsp;autorisées&nbsp;sous&nbsp;forme&nbsp;de&nbsp;chaînes&nbsp;de&nbsp;caractères.</span></dd>
+</dl>
+<dl><dt><strong>pairs</strong></dt>
+<dd><span class="code">Retourne&nbsp;le&nbsp;dictionnaire&nbsp;des&nbsp;paires&nbsp;et&nbsp;leurs&nbsp;scores.<br>
+&nbsp;<br>
+Retourne:<br>
+---------<br>
+dict<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Dictionnaire&nbsp;des&nbsp;paires&nbsp;et&nbsp;leurs&nbsp;scores.</span></dd>
+</dl>
+<dl><dt><strong>scores</strong></dt>
+<dd><span class="code">Retourne&nbsp;un&nbsp;dictionnaire&nbsp;des&nbsp;scores&nbsp;avec&nbsp;les&nbsp;paires&nbsp;triées.<br>
+&nbsp;<br>
+Retourne:<br>
+---------<br>
+dict<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Dictionnaire&nbsp;des&nbsp;scores&nbsp;avec&nbsp;les&nbsp;paires&nbsp;triées.</span></dd>
+</dl>
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>
