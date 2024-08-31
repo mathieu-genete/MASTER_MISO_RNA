@@ -30,7 +30,7 @@ class Rna_structure:
         Score total de la structure.
     """
     
-    def __init__(self,rnaSeq,fold=None,scores=None,dotpar=None):
+    def __init__(self,rnaSeq: Rna_seq,fold=None,scores=None,dotpar=None):
         """
         Initialise une nouvelle instance de Rna_structure.
         
@@ -175,7 +175,7 @@ class Rna_structure:
         
         return True
     
-    def check_hairpin(self,minimal_loop_length):
+    def check_hairpin(self,minimal_loop_length: int):
         """
         Vérifie que toutes les boucles de la structure respectent une longueur minimale.
         
@@ -281,7 +281,7 @@ class Rna_structure:
     #Méthodes privées
     #===================        
     
-    def __dot_par_to_bp(self,struc):
+    def __dot_par_to_bp(self,struc: str):
         """
         Convertit une structure en notation dot-parenthèse en une liste de paires de bases.
         
@@ -325,7 +325,7 @@ class Rna_structure:
         dotpar_txt="".join(out_dot)
         return dotpar_txt
             
-    def __parens_count(self,dotpar):
+    def __parens_count(self,dotpar: str):
         """
         Vérifie que le nombre de parenthèses ouvrantes et fermantes est identique.
         
@@ -362,7 +362,7 @@ class Rna_structure:
                 return False
         return True
     
-    def __search_link(self,rnastruct,i):
+    def __search_link(self,rnastruct: str,i: int):
         """
         Trouve la paire de base correspondante pour une parenthèse ouvrante.
         
@@ -385,7 +385,7 @@ class Rna_structure:
             j+=1
         return (i,i)
 
-    def __arbre_s(self,structure,start=0,end=0,tree=None):
+    def __arbre_s(self,structure: str,start=0,end=0,tree=None):
         """
         Construit un arbre représentant la structure ARN.
         
@@ -423,7 +423,7 @@ class Rna_structure:
                 break
         return tree
     
-    def __construct_tree(self,tree,fold_dict,start=0,end=0):
+    def __construct_tree(self,tree: Tree,fold_dict: dict,start=0,end=0):
         """
         Construit un arbre à partir d'un dictionnaire de paires de bases (folds).
         

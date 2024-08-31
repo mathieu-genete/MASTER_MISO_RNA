@@ -32,7 +32,7 @@ class Predict_structure:
         __use_recurse (bool): Indicateur pour utiliser la récursion.
         __bases_scores (Scores): Scores des bases de l'ARN.
     """
-    def __init__(self,rnaSeq,minloop=3,skipPredAll=False,use_recurse=False,bases_scores=None): 
+    def __init__(self,rnaSeq: Rna_seq,minloop=3,skipPredAll=False,use_recurse=False,bases_scores=None): 
         """
         Initialise une instance de Predict_structure.
 

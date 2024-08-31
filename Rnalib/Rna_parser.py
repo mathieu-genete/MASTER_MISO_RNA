@@ -14,7 +14,7 @@ import os
 
 class Rna_parser:
     @staticmethod
-    def parse_fasta(filename):
+    def parse_fasta(filename: str):
         """
         Analyse un fichier FASTA et retourne un dictionnaire avec les IDs de séquence comme clés et leurs descriptions et séquences comme valeurs.
 
@@ -39,7 +39,7 @@ class Rna_parser:
         return outseq
     
     @staticmethod
-    def fasta_to_db(infasta,outdb,minloop=3,scores=None):
+    def fasta_to_db(infasta: str,outdb: str,minloop=3,scores=None):
         """
         Convertit un fichier FASTA au format dot-bracket en prédisant les structures d'ARN.
 
@@ -63,7 +63,7 @@ class Rna_parser:
                 outdb_file.write(">{}\n{}\n{}\n".format(s.rna.id,s.rna.seq,s.structure.dotpar))
     
     @staticmethod
-    def parse_dotbrackets_file(filename,minimal_loop_length=3):
+    def parse_dotbrackets_file(filename: str,minimal_loop_length=3):
         """
         Analyse un fichier de dot-bracket et retourne un dictionnaire de structures d'ARN.
 
@@ -117,7 +117,7 @@ class Rna_parser:
         return rnastruct_list
     
     @staticmethod
-    def parse_connect_file(filename,minimal_loop_length=3):
+    def parse_connect_file(filename:str ,minimal_loop_length=3):
         """
         Analyse un fichier au format connect et retourne un objet de structure d'ARN.
 
@@ -152,7 +152,7 @@ class Rna_parser:
     #Méthodes privées
     #================ 
     
-    def __check_connect_format(seq,fold,fold_set,minimal_loop_length):
+    def __check_connect_format(seq: str,fold: list,fold_set: set,minimal_loop_length: int):
         """
         Vérifie le format d'un fichier connect.
     
@@ -194,7 +194,7 @@ class Rna_parser:
         
         return True
     
-    def __check_connect_croisements(fold_set):
+    def __check_connect_croisements(fold_set: set):
         """
         Vérifie les croisements dans les paires de positions de liaison.
     

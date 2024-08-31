@@ -21,7 +21,7 @@ class Tree:
         self.__childs=[]
         self.__parent=self
         
-    def add_child(self,tree):
+    def add_child(self,tree: 'Tree'):
         """
         Ajoute un enfant à ce nœud.
         
@@ -89,7 +89,7 @@ class Tree:
         """
         self.__valeur=value
         
-    def set_childs(self,value):
+    def set_childs(self,value: list):
         """
         Définit la liste des enfants du nœud.
         
@@ -97,7 +97,7 @@ class Tree:
         """
         self.__childs=value
 
-    def set_parent(self,value):
+    def set_parent(self,value: 'Tree'):
         """
         Définit le parent du nœud.
         
@@ -109,7 +109,7 @@ class Tree:
     #Méthodes magiques
     #=================== 
     
-    def __eq__(self, other):
+    def __eq__(self, other: 'Tree'):
         """
         Vérifie si deux arbres ont la même architecture en comparant leur représentation en dotpar.
         
@@ -214,7 +214,7 @@ class Tree:
             outstr=self.__print_simple_tree(child, level + 1,outstr)
         return outstr
         
-    def __vert_compact_tree(self,tree):
+    def __vert_compact_tree(self,tree: 'Tree'):
         """
         Compacte verticalement l'arbre en fusionnant les nœuds avec un seul enfant.
         
@@ -229,7 +229,7 @@ class Tree:
                 self.__vert_compact_tree(v.parent)
             self.__vert_compact_tree(v)
             
-    def __horiz_compact_tree(self,tree):
+    def __horiz_compact_tree(self,tree: 'Tree'):
         """
         Compacte horizontalement l'arbre en supprimant les feuilles consécutives.
         

@@ -18,7 +18,7 @@ class Rna_seq:
     __seq : str
         Séquence d'ARN en majuscules.
     """
-    def __init__(self,seqid,inrna):
+    def __init__(self,seqid: str,inrna: str):
         """
         Initialise une nouvelle instance de la classe Rna_seq.
 
