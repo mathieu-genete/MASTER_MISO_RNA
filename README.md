@@ -21,7 +21,7 @@ Pour prédire la structure d'une séquence ARN, utilisez la classe `Predict_stru
 ```python
 a = Rnalib.Predict_structure(rna_seq, 3, skipPredAll=True)
 ```
-la variable skipPredAll permet déterminer ou non l'intégrélité des structures optimales
+la variable skipPredAll permet déterminer ou non de calculer l'ensemble des structures optimales
 
 ### Affichage des informations de prédiction
 
